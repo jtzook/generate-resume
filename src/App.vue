@@ -1,23 +1,26 @@
 <template>
-  <div class="app">
-    <div class="h-screen w-screen bg-teal-800 px-8 py-10">
-      <resume />
+  <div
+    id="app"
+    class="h-screen w-screen bg-gray-600 overflow-auto"
+  >
+    <div class="bg-white mx-8 my-8 overflow-auto">
+      <NavBar />
     </div>
   </div>
 </template>
 
 <script>
-import Resume from './components/Resume.vue'
+import NavBar from "./components/NavBar";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Resume,
-  }
-}
+    NavBar,
+  },
+};
 </script>
 
 <style>
-.app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
