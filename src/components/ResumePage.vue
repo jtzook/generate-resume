@@ -1,7 +1,13 @@
 <template>
-  <div class="mx-6 md:mx-10 my-6 md:my-10 p-4 md:p-6 border">
+  <div
+    id="resume-page"
+    class="p-4 md:p-6 border"
+  >
     <div id="heading">Jared Zook</div>
-    <div id="body"></div>
+    <div
+      id="body"
+      class="text-left"
+    >Body</div>
   </div>
 </template>
 
@@ -9,5 +15,5 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 </style>
