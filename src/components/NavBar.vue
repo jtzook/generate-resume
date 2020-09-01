@@ -1,7 +1,9 @@
 <template>
   <nav class="flex items-center justify-between bg-gray-900 p-3">
-    <div class="flex-1 text-left text-gray-200 mr-2 hover:text-gray-900 hover:bg-gray-200">
-      <i class="fas fa-bars" />
+    <div class="flex-1 text-left text-gray-200 mr-2">
+      <div>
+        <i class="fas fa-bars  hover:text-gray-900 hover:bg-gray-200" />
+      </div>
     </div>
     <div class="flex-0 text-gray-200">
       <span class="text-sm">

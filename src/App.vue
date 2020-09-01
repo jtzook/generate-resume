@@ -1,11 +1,11 @@
 <template>
   <div
-    id="page-wrapper"
-    class="h-screen w-screen bg-gray-600 overflow-auto"
+    id="page"
+    class="flex justify-center h-screen w-screen bg-gray-600 text-center overflow-auto"
   >
     <div
-      id="page"
-      class="bg-white h-full m-16 rounded"
+      id="page-card"
+      class="flex-1 max-w-screen-lg bg-gray-100 m-12 rounded overflow-auto"
     >
       <NavBar />
     </div>
