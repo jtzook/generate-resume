@@ -1,9 +1,12 @@
 <template>
   <div
-    id="app"
+    id="page-wrapper"
     class="h-screen w-screen bg-gray-600 overflow-auto"
   >
-    <div class="bg-white mx-8 my-8 overflow-auto">
+    <div
+      id="page"
+      class="bg-white h-full m-16 rounded"
+    >
       <NavBar />
     </div>
   </div>
@@ -11,6 +14,13 @@
 
 <script>
 import NavBar from "./components/NavBar";
+
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faCamera);
+dom.watch();
+
 export default {
   name: "App",
   components: {
