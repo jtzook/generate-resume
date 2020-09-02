@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { reactive, ref, provide } from "vue";
+
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,7 +27,17 @@ library.add(faCamera);
 dom.watch();
 
 export default {
-  name: "App",
+  setup() {
+    const resumeMode = reactive(ref("classic"));
+    const toggleResumeMode = () => {
+      resumeMode === "classic" ? "modern" : "classic";
+    };
+    provide(resumeMode);
+    return {
+      resumeMode,
+      toggleResumeMode,
+    };
+  },
   components: {
     Footer,
     ContentCard,
