@@ -1,8 +1,10 @@
-# vue-resume
+# reactive-resume
+
+Interactive Resume / CV app built with Vue 3 beta and Tailwind CSS.
 
 ## Project setup
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
@@ -14,11 +16,3 @@ yarn serve
 ```
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
