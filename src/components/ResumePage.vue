@@ -3,16 +3,20 @@
     id="resume-page"
     class="p-4 md:p-6 border"
   >
-    <div id="heading">First Last</div>
-    <div
-      id="body"
-      class="text-left"
-    >Body</div>
+    <SingleColumnResume />
   </div>
 </template>
 
 <script>
-export default {};
+import SingleColumnResume from "./resumes/SingleColumnResume";
+// import MultiColumnResume from "./resumes/MultiColumnResume";
+
+export default {
+  components: {
+    SingleColumnResume,
+    //     MultiColumnResume,
+  },
+};
 </script>
 
 <style scoped>

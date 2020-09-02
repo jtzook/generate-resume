@@ -17,7 +17,7 @@
       <a
         href="#"
         class="text-sm px-2 py-1 leading-none border rounded text-gray-200 border-gray-200 hover:text-gray-900 hover:bg-gray-200"
-      >Export to PDF</a>
+      >Export</a>
     </div>
   </nav>
 </template>

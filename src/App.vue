@@ -1,20 +1,16 @@
 <template>
   <div
     id="app"
-    class="flex justify-center bg-gray-600 overflow-auto"
+    class="bg-gray-600 overflow-auto"
   >
-    <div
-      id="app-card"
-      class="flex-1 max-w-3xl bg-gray-100 m-12 rounded overflow-auto"
-    >
-      <NavBar />
-      <div
-        id="page"
-        class="px-6 md:px-10  py-6 md:py-10"
-      >
-        <!-- <ResumePage /> -->
-      </div>
+    <div class="body">
+      <div class="side-column"></div>
+
+      <ContentCard class="content" />
+
+      <div class="side-column"></div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -22,8 +18,8 @@
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-import NavBar from "./components/NavBar";
-import ResumePage from "./components/ResumePage";
+import Footer from "./components/Footer";
+import ContentCard from "./components/ContentCard";
 
 library.add(faCamera);
 dom.watch();
@@ -31,8 +27,8 @@ dom.watch();
 export default {
   name: "App",
   components: {
-    NavBar,
-    ResumePage,
+    Footer,
+    ContentCard,
   },
 };
 </script>
@@ -46,5 +42,20 @@ export default {
   color: #2c3e50;
   width: 100vw;
   height: 100vh;
+}
+</style>
+
+<style lang="scss" scoped>
+.body {
+  height: calc(100% - 50px);
+  display: flex;
+
+  .side-column {
+    flex: 1 1 5%;
+  }
+
+  .content {
+    flex: 1 1 768px;
+  }
 }
 </style>
