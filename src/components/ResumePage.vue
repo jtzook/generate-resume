@@ -3,7 +3,7 @@
     id="resume-page"
     class="p-4 md:p-6 border"
   >
-    <div id="heading">Jared Zook</div>
+    <div id="heading">First Last</div>
     <div
       id="body"
       class="text-left"

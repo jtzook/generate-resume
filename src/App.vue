@@ -1,29 +1,29 @@
 <template>
   <div
     id="app"
-    class="flex justify-center h-screen w-screen bg-gray-600 text-center overflow-auto"
+    class="flex justify-center bg-gray-600 overflow-auto"
   >
     <div
-      id="page-card"
-      class="flex-1 max-w-4xl bg-gray-100 m-12 rounded overflow-auto"
+      id="app-card"
+      class="flex-1 max-w-3xl bg-gray-100 m-12 rounded overflow-auto"
     >
       <NavBar />
       <div
         id="page"
         class="px-6 md:px-10  py-6 md:py-10"
       >
-        <ResumePage />
+        <!-- <ResumePage /> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import NavBar from "./components/NavBar";
-import ResumePage from "./components/ResumePage";
-
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+
+import NavBar from "./components/NavBar";
+import ResumePage from "./components/ResumePage";
 
 library.add(faCamera);
 dom.watch();
@@ -44,5 +44,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
