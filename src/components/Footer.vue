@@ -1,11 +1,11 @@
 <template>
   <div :class="[...tailwind]">
-    <span class="mr-2">© 2020 - Jared Zook</span>
+    <span class="mr-0 sm:mr-2">© 2020 - Jared Zook</span>
     <span class="mr-2 font-black hidden sm:inline">&#183;</span>
     <a
       class="text-gray-400 hover:text-gray-800"
       target="_blank"
-      href="https://github.com/jtzook/vue-resume"
+      href="https://github.com/jtzook/reactive-resume"
     >See Project Repository on GitHub</a>
   </div>
 </template>
@@ -17,7 +17,7 @@
         tailwind: [
           "my-2",
           "justify-center items-center",
-          "flex flex-grow flex-shrink-0",
+          "flex flex-shrink-0",
           "flex-col-reverse sm:flex-row",
         ],
       };

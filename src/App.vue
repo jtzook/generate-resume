@@ -1,6 +1,6 @@
 <template>
   <div class="page bg-gray-600 overflow-auto">
-    <div class="content-container">
+    <div class="content-container flex">
       <div class="side-column"></div>
       <div
         class="flex"
@@ -62,9 +62,7 @@
 
 <style lang="scss" scoped>
   .content-container {
-    flex: 1 1 auto;
-    height: calc(100% - 50px);
-    display: flex;
+    flex: 1 0 auto;
 
     .side-column {
       flex: 1 1 5%;
