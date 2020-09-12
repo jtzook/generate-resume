@@ -1,15 +1,16 @@
 <template>
-  <div
-    id="app"
-    class="bg-gray-600 overflow-auto"
-  >
-    <div class="body">
+  <div class="page bg-gray-600 overflow-auto">
+    <div class="content-container">
       <div class="side-column"></div>
-
-      <ContentCard class="content" />
-
+      <div
+        class="flex"
+        style="flex-basis: 780px;"
+      >
+        <ContentCard />
+      </div>
       <div class="side-column"></div>
     </div>
+
     <Footer />
   </div>
 </template>
@@ -46,7 +47,9 @@
 </script>
 
 <style>
-  #app {
+  .page {
+    display: flex;
+    flex-direction: column;
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -58,16 +61,13 @@
 </style>
 
 <style lang="scss" scoped>
-  .body {
+  .content-container {
+    flex: 1 1 auto;
     height: calc(100% - 50px);
     display: flex;
 
     .side-column {
       flex: 1 1 5%;
-    }
-
-    .content {
-      flex: 1 1 768px;
     }
   }
 </style>
