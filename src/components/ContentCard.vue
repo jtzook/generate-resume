@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col flex-1 bg-gray-100 m-8 rounded-lg overflow-auto">
+  <div :class="tailwind.contentCard">
     <CardHeader @click="toggleResumeMode" />
-    <div class="flex flex-col flex-1 mx-6 md:mx-10 my-6 md:my-8">
+    <div :class="tailwind.cardBody">
       <SingleColumnResume v-show="state.resumeMode === 'classic'" />
       <MultiColumnResume v-show="state.resumeMode !== 'classic'" />
     </div>
@@ -22,9 +22,20 @@
       const toggleResumeMode = () => {
         state.resumeMode = state.resumeMode === "classic" ? "modern" : "classic";
       };
+      const tailwind = {
+        contentCard: [
+          "flex flex-col flex-1",
+          "bg-gray-100",
+          "mx-8 mt-8",
+          "rounded-lg",
+          "overflow-auto",
+        ],
+        cardBody: ["flex flex-col flex-1", "px-6 md:px-10", "py-6 md:py-8"],
+      };
       return {
         state,
         toggleResumeMode,
+        tailwind,
       };
     },
     components: {

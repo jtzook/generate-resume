@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 md:p-5">
+  <div>
     <div class="resume-header">
       <h1>First Last</h1>
     </div>
@@ -10,20 +10,16 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
-.resume-body {
-  display: flex;
+  .resume-body {
+    display: flex;
 
-  .left-panel {
-    flex: 1 0 33%;
-  }
+    .left-panel {
+      flex: 1 0 33%;
+    }
 
-  .right-panel {
-    flex: 1 0 67%;
+    .right-panel {
+      flex: 1 0 67%;
+    }
   }
-}
 </style>
