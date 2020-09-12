@@ -6,7 +6,7 @@
         class="flex"
         style="flex-basis: 780px;"
       >
-        <ContentCard />
+        <Card />
       </div>
       <div class="side-column"></div>
     </div>
@@ -21,8 +21,8 @@
   import { library, dom } from "@fortawesome/fontawesome-svg-core";
   import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
+  import Card from "./components/card/Card.vue";
   import Footer from "./components/Footer.vue";
-  import ContentCard from "./components/ContentCard.vue";
 
   library.add(faCamera);
   dom.watch();
@@ -41,7 +41,7 @@
     },
     components: {
       Footer,
-      ContentCard,
+      Card,
     },
   };
 </script>
