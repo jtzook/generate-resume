@@ -10,9 +10,10 @@
 
 <script>
   import { reactive } from "vue";
-  import CardHeader from "./CardHeader";
-  import SingleColumnResume from "./resume/SingleColumnResume";
-  import MultiColumnResume from "./resume/MultiColumnResume";
+
+  import CardHeader from "./CardHeader.vue";
+  import SingleColumnResume from "./resume/SingleColumnResume.vue";
+  import MultiColumnResume from "./resume/MultiColumnResume.vue";
 
   export default {
     setup() {

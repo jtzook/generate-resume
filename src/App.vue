@@ -21,8 +21,8 @@
   import { library, dom } from "@fortawesome/fontawesome-svg-core";
   import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-  import Footer from "./components/Footer";
-  import ContentCard from "./components/ContentCard";
+  import Footer from "./components/Footer.vue";
+  import ContentCard from "./components/ContentCard.vue";
 
   library.add(faCamera);
   dom.watch();
