@@ -1,11 +1,8 @@
 <template>
-  <div class="flex-1 max-w-3xl bg-gray-100 mx-12 mt-12 mb-4 rounded overflow-auto">
+  <div class="flex-1 max-w-3xl bg-gray-100 mx-12 mt-12 mb-4 rounded-lg overflow-auto">
     <CardHeader @click="toggleResumeMode" />
-    <div class="mx-6 md:mx-10  my-6 md:my-8">
-      <div
-        @click="increment"
-        class="p-4 md:p-6 border"
-      >
+    <div class="mx-6 md:mx-10 my-6 md:my-8">
+      <div @click="increment" class="p-4 md:p-6 border">
         <SingleColumnResume v-show="state.resumeMode === 'classic'" />
         <MultiColumnResume v-show="state.resumeMode !== 'classic'" />
       </div>
