@@ -27,3 +27,6 @@ yarn build
 ### TODOs
 
 - replace relative imports with @
+- add typescript
+- useResume composable
+- ResumeHeader component
