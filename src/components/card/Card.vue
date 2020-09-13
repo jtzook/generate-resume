@@ -2,14 +2,14 @@
   <div :class="tailwind.Card">
     <CardHeader @click="toggleResumeMode" />
     <CardContent>
-      <SingleColumnResume v-show="state.resumeMode === 'classic'" />
-      <MultiColumnResume v-show="state.resumeMode !== 'classic'" />
+      <SingleColumnResume v-show="resumeOptions.resumeMode === 'classic'" />
+      <MultiColumnResume v-show="resumeOptions.resumeMode !== 'classic'" />
     </CardContent>
   </div>
 </template>
 
 <script>
-  import { reactive } from "vue";
+  import useResumeOptions from "../../composables/useResumeOptions";
 
   import CardHeader from "./CardHeader.vue";
   import CardContent from "./CardContent.vue";
@@ -24,12 +24,8 @@
       MultiColumnResume,
     },
     setup() {
-      const state = reactive({
-        resumeMode: "modern",
-      });
-      const toggleResumeMode = () => {
-        state.resumeMode = state.resumeMode === "classic" ? "modern" : "classic";
-      };
+      const { resumeOptions, toggleResumeMode } = useResumeOptions();
+
       const tailwind = {
         Card: [
           "flex flex-col flex-1",
@@ -40,7 +36,7 @@
         ],
       };
       return {
-        state,
+        resumeOptions,
         toggleResumeMode,
         tailwind,
       };
