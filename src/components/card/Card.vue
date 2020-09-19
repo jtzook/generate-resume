@@ -23,6 +23,7 @@
       SingleColumnResume,
       MultiColumnResume,
     },
+
     setup() {
       const { resumeOptions, toggleResumeMode } = useResumeOptions();
 
@@ -35,6 +36,7 @@
           "overflow-auto",
         ],
       };
+
       return {
         resumeOptions,
         toggleResumeMode,
