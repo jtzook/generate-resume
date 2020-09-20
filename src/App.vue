@@ -1,11 +1,9 @@
 <template>
   <div class="page bg-gray-600 overflow-auto">
     <div class="content-container flex">
-      <div class="side-column"></div>
-      <div class="card-column">
-        <Card />
-      </div>
-      <div class="side-column"></div>
+      <Sidebar class="sidebar-flex"></Sidebar>
+      <Card class="card-flex" />
+      <Sidebar class="sidebar-flex"></Sidebar>
     </div>
 
     <Footer />
@@ -20,6 +18,7 @@
 
   import Card from "./components/card/Card.vue";
   import Footer from "./components/Footer.vue";
+  import Sidebar from "./components/Sidebar.vue";
 
   library.add(faCamera);
   dom.watch();
@@ -37,8 +36,9 @@
       };
     },
     components: {
-      Footer,
       Card,
+      Footer,
+      Sidebar,
     },
   };
 </script>
@@ -61,11 +61,11 @@
   .content-container {
     flex: 1 0 auto;
 
-    .card-column {
+    .card-flex {
       flex: 4.5 auto;
     }
 
-    .side-column {
+    .sidebar-flex {
       flex: 1 10%;
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="tailwind.footer">
+  <div :class="state.tailwind">
     <span class="mr-0 sm:mr-2">© 2020 - Jared Zook</span>
     <span class="mr-2 font-black hidden sm:inline">&#183;</span>
     <a
@@ -13,15 +13,15 @@
 <script>
   export default {
     setup() {
-      const tailwind = {
-        footer: [
+      const state = {
+        tailwind: [
           "my-3",
           "justify-center items-center",
           "flex flex-shrink-0",
           "flex-col-reverse sm:flex-row",
         ],
       };
-      return { tailwind };
+      return { state };
     },
   };
 </script>
