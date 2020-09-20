@@ -1,9 +1,13 @@
 <template>
   <div class="page bg-gray-600 overflow-auto">
     <div class="content-container flex">
-      <Sidebar class="sidebar-flex"></Sidebar>
+      <div class="sidebar-flex">
+        <Sidebar></Sidebar>
+      </div>
       <Card class="card-flex" />
-      <Sidebar class="sidebar-flex"></Sidebar>
+      <div class="sidebar-flex">
+        <Sidebar></Sidebar>
+      </div>
     </div>
 
     <Footer />
@@ -67,6 +71,7 @@
 
     .sidebar-flex {
       flex: 1 10%;
+      overflow: auto;
     }
   }
 </style>
