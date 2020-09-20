@@ -29,16 +29,16 @@
 </script>
 
 <style lang="scss" scoped>
-  /* sm */
-  @media only screen and (max-width: 640px) {
-    .hide-if-mobile {
+  @import "@/assets/scss/variables.scss";
+
+  .hide-if-mobile {
+    @media only screen and (max-width: $sm) {
       display: none;
     }
   }
 
   #nav-bar {
     height: 40px;
-
     .export-button {
       padding: 0.1rem 0.5rem;
     }

@@ -2,10 +2,7 @@
   <div class="page bg-gray-600 overflow-auto">
     <div class="content-container flex">
       <div class="side-column"></div>
-      <div
-        class="flex"
-        style="flex-basis: 780px;"
-      >
+      <div class="card-column">
         <Card />
       </div>
       <div class="side-column"></div>
@@ -64,8 +61,12 @@
   .content-container {
     flex: 1 0 auto;
 
+    .card-column {
+      flex: 4.5 auto;
+    }
+
     .side-column {
-      flex: 1 1 5%;
+      flex: 1 10%;
     }
   }
 </style>
