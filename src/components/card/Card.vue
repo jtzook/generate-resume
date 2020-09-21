@@ -31,7 +31,7 @@
         tailwind: [
           "flex flex-col flex-1",
           "bg-gray-100",
-          "mx-8 mt-8",
+          "mx-8",
           "rounded-lg",
           "overflow-auto",
         ],

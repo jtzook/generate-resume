@@ -1,13 +1,11 @@
 <template>
   <div class="page bg-gray-600 overflow-auto">
-    <div class="content-container flex">
-      <div class="sidebar-flex">
+    <div class="content-container flex pt-8">
+      <div class="side-column">
         <Sidebar></Sidebar>
       </div>
       <Card class="card-flex" />
-      <div class="sidebar-flex">
-        <Sidebar></Sidebar>
-      </div>
+      <div class="side-column hide-below-lg"></div>
     </div>
 
     <Footer />
@@ -62,6 +60,8 @@
 </style>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables.scss";
+
   .content-container {
     flex: 1 0 auto;
 
@@ -69,9 +69,15 @@
       flex: 4.5 auto;
     }
 
-    .sidebar-flex {
+    .side-column {
       flex: 1 10%;
-      overflow: auto;
+
+      // TODO: enable when sidebar active
+      // &.hide-below-lg {
+      //   @media only screen and (max-width: $lg) {
+      //     display: none;
+      //   }
+      // }
     }
   }
 </style>

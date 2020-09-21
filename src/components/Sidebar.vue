@@ -6,7 +6,7 @@
   export default {
     setup() {
       const state = {
-        tailwind: ["h-full w-full", "rounded-lg", "bg-gray-900", "mt-8"],
+        tailwind: ["h-full w-full", "rounded-r-lg", "bg-gray-900"],
       };
       return { state };
     },

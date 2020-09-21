@@ -31,6 +31,7 @@
 
   #nav-bar {
     height: 40px;
+
     .export-button {
       padding: 0.1rem 0.5rem;
     }
