@@ -2,7 +2,7 @@
   <div class="page bg-gray-600 overflow-auto">
     <div class="content-container flex pt-8">
       <div class="side-column">
-        <Sidebar></Sidebar>
+        <Sidebar v-if="showSidebar"></Sidebar>
       </div>
       <Card class="card-flex" />
       <div class="side-column hide-below-lg"></div>
@@ -13,8 +13,7 @@
 </template>
 
 <script>
-  import { reactive, ref, provide } from "vue";
-
+  import { unref } from "vue";
   import { library, dom } from "@fortawesome/fontawesome-svg-core";
   import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
@@ -22,21 +21,18 @@
   import Footer from "./components/Footer.vue";
   import Sidebar from "./components/Sidebar.vue";
 
+  import useAppState from "./composables/useAppState";
+
   library.add(faCamera);
   dom.watch();
 
   export default {
     setup() {
-      const resumeMode = reactive(ref("classic"));
-      const toggleResumeMode = () => {
-        resumeMode === "classic" ? "modern" : "classic";
-      };
-      provide(resumeMode);
-      return {
-        resumeMode,
-        toggleResumeMode,
-      };
+      const { showSidebar } = useAppState();
+
+      return unref(showSidebar);
     },
+
     components: {
       Card,
       Footer,

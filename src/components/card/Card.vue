@@ -1,6 +1,6 @@
 <template>
   <div :class="state.tailwind">
-    <CardHeader @click="toggleResumeMode" />
+    <CardHeader />
     <CardContent>
       <SingleColumnResume v-show="resumeOptions.resumeMode === 'classic'" />
       <MultiColumnResume v-show="resumeOptions.resumeMode !== 'classic'" />
@@ -25,7 +25,7 @@
     },
 
     setup() {
-      const { resumeOptions, toggleResumeMode } = useResumeOptions();
+      const { resumeOptions } = useResumeOptions();
 
       const state = {
         tailwind: [
@@ -40,7 +40,6 @@
       return {
         state,
         resumeOptions,
-        toggleResumeMode,
       };
     },
   };

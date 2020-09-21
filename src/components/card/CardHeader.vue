@@ -4,8 +4,11 @@
     class="flex items-center justify-between bg-gray-900 p-3"
   >
     <div class="flex-1 text-left text-gray-200 mr-2">
-      <div class="flex">
-        <i class="fas fa-bars hover:text-gray-900 hover:bg-gray-200" />
+      <div
+        @click="toggleSidebar"
+        class="flex"
+      >
+        <i class="fas fa-bars hover:text-gray-900 hover:bg-gray-200"></i>
       </div>
     </div>
     <div class="flex-0 text-gray-200">
@@ -19,6 +22,21 @@
     </div>
   </nav>
 </template>
+
+<script>
+  import useAppState from "@/composables/useAppState";
+
+  export default {
+    setup() {
+      const { appState, toggleSidebar } = useAppState();
+
+      return {
+        appState,
+        toggleSidebar,
+      };
+    },
+  };
+</script>
 
 <style lang="scss" scoped>
   @import "@/assets/scss/variables.scss";
