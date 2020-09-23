@@ -24,8 +24,6 @@
 </template>
 
 <script>
-import useAppState from "@/composables/useAppState";
-
 export default {
   setup() {
     const tailwind = {
@@ -43,14 +41,8 @@ export default {
       ],
     };
 
-    const { appState, toggleSidebar } = useAppState();
-    const { toggleResumeMode } = useAppState();
-
     return {
       tailwind,
-      appState,
-      toggleSidebar,
-      toggleResumeMode,
     };
   },
 };
