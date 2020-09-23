@@ -68,7 +68,7 @@ export default {
   }
 
   .side-column {
-    flex: 1 0%;
+    flex: 1 5%;
 
     &.hide-below-lg {
       @media only screen and (max-width: $lg) {
