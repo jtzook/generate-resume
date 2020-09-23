@@ -1,14 +1,22 @@
 <template>
-  <div :class="['Panel', ...state.tailwind]"></div>
+  <div :class="['Panel', ...state.tailwind]">
+    <ButtonGroup />
+  </div>
 </template>
 
 <script>
+import ButtonGroup from "./ButtonGroup";
+
 export default {
   setup() {
     const state = {
       tailwind: ["w-full", "rounded-r-lg", "bg-gray-900"],
     };
     return { state };
+  },
+
+  components: {
+    ButtonGroup,
   },
 };
 </script>
