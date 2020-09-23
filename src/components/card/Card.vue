@@ -1,5 +1,5 @@
 <template>
-  <div :class="state.tailwind">
+  <div :class="['card', ...tailwind.card]">
     <CardHeader />
     <CardContent>
       <SingleColumnResume v-show="resumeOptions.resumeMode === 'classic'" />
@@ -9,38 +9,44 @@
 </template>
 
 <script>
-  import useResumeOptions from "../../composables/useResumeOptions";
+import useResumeOptions from "../../composables/useResumeOptions";
 
-  import CardHeader from "./CardHeader.vue";
-  import CardContent from "./CardContent.vue";
-  import SingleColumnResume from "../resume/SingleColumnResume.vue";
-  import MultiColumnResume from "../resume/MultiColumnResume.vue";
+import CardHeader from "./CardHeader.vue";
+import CardContent from "./CardContent.vue";
+import SingleColumnResume from "../resume/SingleColumnResume.vue";
+import MultiColumnResume from "../resume/MultiColumnResume.vue";
 
-  export default {
-    components: {
-      CardHeader,
-      CardContent,
-      SingleColumnResume,
-      MultiColumnResume,
-    },
+export default {
+  components: {
+    CardHeader,
+    CardContent,
+    SingleColumnResume,
+    MultiColumnResume,
+  },
 
-    setup() {
-      const { resumeOptions } = useResumeOptions();
+  setup() {
+    const { resumeOptions } = useResumeOptions();
 
-      const state = {
-        tailwind: [
-          "flex flex-col flex-1",
-          "bg-gray-100",
-          "mx-8",
-          "rounded-lg",
-          "overflow-auto",
-        ],
-      };
+    const tailwind = {
+      card: [
+        "flex flex-col flex-1",
+        "bg-gray-100",
+        "mx-8",
+        "rounded-lg",
+        "overflow-auto",
+      ],
+    };
 
-      return {
-        state,
-        resumeOptions,
-      };
-    },
-  };
+    return {
+      tailwind,
+      resumeOptions,
+    };
+  },
+};
 </script>
+
+<style lang="scss" scoped>
+.card {
+  max-width: 950px;
+}
+</style>

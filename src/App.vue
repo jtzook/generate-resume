@@ -5,7 +5,7 @@
         <Sidebar v-if="showSidebar"></Sidebar>
       </div>
       <Card class="card-flex" />
-      <div class="side-column hide-below-lg"></div>
+      <div :class="['side-column', {'hide-below-lg': showSidebar}]"></div>
     </div>
 
     <Footer />
@@ -68,14 +68,13 @@ export default {
   }
 
   .side-column {
-    flex: 1 10%;
+    flex: 1 0%;
 
-    // TODO: enable when sidebar active
-    // &.hide-below-lg {
-    //   @media only screen and (max-width: $lg) {
-    //     display: none;
-    //   }
-    // }
+    &.hide-below-lg {
+      @media only screen and (max-width: $lg) {
+        display: none;
+      }
+    }
   }
 }
 </style>
