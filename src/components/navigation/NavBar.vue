@@ -5,7 +5,7 @@
   >
     <div class="flex-1 text-left text-gray-200 mr-2">
       <div
-        @click="toggleSidebar"
+        @click="togglePanel"
         class="flex"
       >
         <i :class="tailwind.hamburger"></i>
@@ -40,11 +40,11 @@ export default {
       ],
     };
 
-    const toggleSidebar = inject("toggleSidebar");
+    const togglePanel = inject("togglePanel");
 
     return {
       tailwind,
-      toggleSidebar,
+      togglePanel,
     };
   },
 };

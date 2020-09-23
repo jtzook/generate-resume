@@ -2,13 +2,21 @@
   <div class="page bg-gray-600 overflow-auto">
     <div class="content-container flex pt-8">
       <div class="side-column">
-        <Sidebar v-if="showSidebar"></Sidebar>
+        <Panel v-if="showPanel"></Panel>
       </div>
       <Card class="card-flex" />
-      <div :class="['side-column', {'hide-below-lg': showSidebar}]"></div>
+      <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
     </div>
 
-    <Footer />
+    <div :class="tailwind.footer">
+      <span class="mr-0 sm:mr-2">© 2020 - Jared Zook</span>
+      <span class="mr-2 font-black hidden sm:inline">&#183;</span>
+      <a
+        class="text-gray-400 hover:text-gray-800"
+        target="_blank"
+        href="https://github.com/jtzook/reactive-resume"
+      >See Project Repository on GitHub</a>
+    </div>
   </div>
 </template>
 
@@ -17,28 +25,36 @@ import { provide, ref } from "vue";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-import Card from "./components/card/Card.vue";
-import Footer from "./components/Footer.vue";
-import Sidebar from "./components/Sidebar.vue";
+import Card from "@/components/card/Card.vue";
+import Panel from "@/components/generic/Panel.vue";
 
 library.add(faCamera);
 dom.watch();
 
 export default {
   setup() {
-    const showSidebar = ref(false);
+    const tailwind = {
+      footer: [
+        "my-3",
+        "justify-center items-center",
+        "flex flex-shrink-0",
+        "flex-col-reverse sm:flex-row",
+      ],
+    };
 
-    provide("toggleSidebar", () => (showSidebar.value = !showSidebar.value));
+    const showPanel = ref(false);
+
+    provide("togglePanel", () => (showPanel.value = !showPanel.value));
 
     return {
-      showSidebar,
+      showPanel,
+      tailwind,
     };
   },
 
   components: {
     Card,
-    Footer,
-    Sidebar,
+    Panel,
   },
 };
 </script>

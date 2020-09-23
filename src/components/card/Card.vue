@@ -1,6 +1,6 @@
 <template>
   <div :class="['card', ...tailwind.card]">
-    <CardHeader />
+    <NavBar />
     <CardContent>
       <SingleColumnResume v-show="resumeOptions.resumeMode === 'classic'" />
       <MultiColumnResume v-show="resumeOptions.resumeMode !== 'classic'" />
@@ -9,16 +9,17 @@
 </template>
 
 <script>
-import useResumeOptions from "../../composables/useResumeOptions";
+import useResumeOptions from "@/composables/useResumeOptions";
 
-import CardHeader from "./CardHeader.vue";
+import NavBar from "@/components/navigation/NavBar.vue";
+import SingleColumnResume from "@/components/resume/SingleColumnResume.vue";
+import MultiColumnResume from "@/components/resume/MultiColumnResume.vue";
+
 import CardContent from "./CardContent.vue";
-import SingleColumnResume from "../resume/SingleColumnResume.vue";
-import MultiColumnResume from "../resume/MultiColumnResume.vue";
 
 export default {
   components: {
-    CardHeader,
+    NavBar,
     CardContent,
     SingleColumnResume,
     MultiColumnResume,
