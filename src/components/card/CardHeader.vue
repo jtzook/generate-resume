@@ -15,15 +15,14 @@
       <span class="text-sm">Reactive Resume</span>
     </div>
     <div class="flex-1 flex justify-end hide-if-mobile">
-      <div
-        @click="toggleResumeMode"
-        :class="['export-button', ...tailwind.exportButton]"
-      >Export</div>
+      <div :class="['export-button', ...tailwind.exportButton]">Export</div>
     </div>
   </nav>
 </template>
 
 <script>
+import { inject } from "vue";
+
 export default {
   setup() {
     const tailwind = {
@@ -41,8 +40,11 @@ export default {
       ],
     };
 
+    const toggleSidebar = inject("toggleSidebar");
+
     return {
       tailwind,
+      toggleSidebar,
     };
   },
 };

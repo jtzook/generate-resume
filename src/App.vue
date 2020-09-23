@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { onMounted, provide, ref } from "vue";
+import { provide, ref } from "vue";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,11 +28,7 @@ export default {
   setup() {
     const showSidebar = ref(false);
 
-    const toggleSidebar = () => {
-      showSidebar.value = !showSidebar.value;
-    };
-
-    provide("showSidebar", showSidebar.value);
+    provide("toggleSidebar", () => (showSidebar.value = !showSidebar.value));
 
     return {
       showSidebar,
