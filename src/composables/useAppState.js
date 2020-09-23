@@ -1,14 +1,17 @@
-import { ref } from 'vue';
+import { reactive } from "vue";
 
 export default function useAppState() {
-  const showSidebar = ref(false);
+  const appState = reactive({
+    showSidebar: false,
+  });
 
   const toggleSidebar = () => {
-    showSidebar = !showSidebar;
+    console.log("toggling sidebar", toggleSidebar);
+    appState.showSidebar = !appState.showSidebar;
   };
 
   return {
-    showSidebar,
+    appState,
     toggleSidebar,
   };
 }

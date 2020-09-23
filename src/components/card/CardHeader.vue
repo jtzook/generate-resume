@@ -1,57 +1,76 @@
 <template>
   <nav
     id="nav-bar"
-    class="flex items-center justify-between bg-gray-900 p-3"
+    :class="tailwind.navBar"
   >
     <div class="flex-1 text-left text-gray-200 mr-2">
       <div
         @click="toggleSidebar"
         class="flex"
       >
-        <i class="fas fa-bars hover:text-gray-900 hover:bg-gray-200"></i>
+        <i :class="tailwind.hamburger"></i>
       </div>
     </div>
     <div class="flex-0 text-gray-200">
       <span class="text-sm">Reactive Resume</span>
     </div>
-    <div class="flex-1 text-right hide-if-mobile">
-      <a
-        href="#"
-        class="export-button text-sm px-2 leading-none border rounded text-gray-200 border-gray-200 hover:text-gray-900 hover:bg-gray-200"
-      >Export</a>
+    <div class="flex-1 flex justify-end hide-if-mobile">
+      <div
+        @click="toggleResumeMode"
+        :class="['export-button', ...tailwind.exportButton]"
+      >Export</div>
     </div>
   </nav>
 </template>
 
 <script>
-  import useAppState from "@/composables/useAppState";
+import useAppState from "@/composables/useAppState";
 
-  export default {
-    setup() {
-      const { appState, toggleSidebar } = useAppState();
+export default {
+  setup() {
+    const tailwind = {
+      navBar: ["flex", "items-center", "justify-between", "bg-gray-900", "p-3"],
+      hamburger: ["fas", "fa-bars", "hover:text-gray-900", "hover:bg-gray-200"],
+      exportButton: [
+        "text-sm",
+        "leading-tight",
+        "border",
+        "rounded",
+        "text-gray-200",
+        "border-gray-200",
+        "hover:text-gray-900",
+        "hover:bg-gray-200",
+      ],
+    };
 
-      return {
-        appState,
-        toggleSidebar,
-      };
-    },
-  };
+    const { appState, toggleSidebar } = useAppState();
+    const { toggleResumeMode } = useAppState();
+
+    return {
+      tailwind,
+      appState,
+      toggleSidebar,
+      toggleResumeMode,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/scss/variables.scss";
+@import "@/assets/scss/variables.scss";
 
-  .hide-if-mobile {
-    @media only screen and (max-width: $sm) {
-      display: none;
-    }
+.hide-if-mobile {
+  @media only screen and (max-width: $sm) {
+    display: none;
   }
+}
 
-  #nav-bar {
-    height: 40px;
+#nav-bar {
+  height: 40px;
 
-    .export-button {
-      padding: 0.1rem 0.5rem;
-    }
+  .export-button {
+    width: 60px;
+    padding: 0.1rem 0.5rem;
   }
+}
 </style>
