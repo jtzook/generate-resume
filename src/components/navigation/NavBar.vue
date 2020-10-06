@@ -15,13 +15,18 @@
       <span class="text-sm">Reactive Resume</span>
     </div>
     <div class="flex-1 flex justify-end hide-if-mobile">
-      <div :class="['export-button', ...tailwind.exportButton]">Export</div>
+      <div
+        @click="exportToCSV('id')"
+        :class="['export-button', ...tailwind.exportButton]"
+      >Export</div>
     </div>
   </nav>
 </template>
 
 <script>
 import { inject } from "vue";
+
+import useResume from "@/composables/useResume";
 
 export default {
   setup() {
@@ -42,9 +47,12 @@ export default {
 
     const togglePanel = inject("togglePanel");
 
+    const { exportToCSV } = useResume();
+
     return {
       tailwind,
       togglePanel,
+      exportToCSV,
     };
   },
 };
