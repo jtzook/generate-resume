@@ -1,7 +1,7 @@
 export default function useResume() {
-  const exportToCSV = (elementId) => {
+  const exportToCSV = (template) => {
     // TODO: get document node, see html2pdf-usage
-    console.log("elementId", elementId);
+    console.log("template", template);
   };
 
   return {
