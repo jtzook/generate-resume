@@ -46,9 +46,11 @@ export default {
         "overflow-auto",
       ],
       cardContentStyling: [
+        "resume",
         "flex flex-col flex-1",
-        "px-6 md:px-10",
-        "py-6 md:py-8",
+        "mx-6 md:mx-10",
+        "my-6 md:my-8",
+        "border-solid",
       ],
     };
   },
@@ -58,5 +60,9 @@ export default {
 <style lang="scss" scoped>
 .card {
   max-width: 950px;
+
+  .resume {
+    border: 1px solid black;
+  }
 }
 </style>

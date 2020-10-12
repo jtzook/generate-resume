@@ -1,15 +1,10 @@
 <template>
-  <nav
-    id="nav-bar"
-    :class="tailwind.navBar"
-  >
-    <div class="flex-1 text-left text-gray-200 mr-2">
-      <div
-        @click="togglePanel"
-        class="flex"
-      >
-        <i :class="tailwind.hamburger"></i>
-      </div>
+  <nav :class="styling.navBar">
+    <div
+      :class="[...styling.hamburgerBun]"
+      @click="togglePanel"
+    >
+      <i :class="styling.hamburger"></i>
     </div>
     <div class="flex-0 text-gray-200">
       <span class="text-sm">Reactive Resume</span>
@@ -17,7 +12,7 @@
     <div class="flex-1 flex justify-end hide-if-mobile">
       <div
         @click="$emit('export-to-csv')"
-        :class="['export-button', ...tailwind.exportButton]"
+        :class="['export-button', ...styling.exportButton]"
       >Export</div>
     </div>
   </nav>
@@ -28,8 +23,16 @@ import { inject } from "vue";
 
 export default {
   setup() {
-    const tailwind = {
-      navBar: ["flex", "items-center", "justify-between", "bg-gray-900", "p-3"],
+    const styling = {
+      navBar: [
+        "nav-bar",
+        "flex",
+        "items-center",
+        "justify-between",
+        "bg-gray-900",
+        "p-3",
+      ],
+      hamburgerBun: ["flex", "flex-1", "text-left", "text-gray-200", "mr-2"],
       hamburger: [
         "fas",
         "fa-bars",
@@ -53,7 +56,7 @@ export default {
     const togglePanel = inject("togglePanel");
 
     return {
-      tailwind,
+      styling,
       togglePanel,
     };
   },
@@ -69,7 +72,7 @@ export default {
   }
 }
 
-#nav-bar {
+.nav-bar {
   height: 40px;
 
   .export-button {
