@@ -30,7 +30,13 @@ export default {
   setup() {
     const tailwind = {
       navBar: ["flex", "items-center", "justify-between", "bg-gray-900", "p-3"],
-      hamburger: ["fas", "fa-bars", "hover:text-gray-900", "hover:bg-gray-200"],
+      hamburger: [
+        "fas",
+        "fa-bars",
+        "hover:text-gray-900",
+        "hover:bg-gray-200",
+        "cursor-pointer",
+      ],
       exportButton: [
         "text-sm",
         "leading-tight",
@@ -40,6 +46,7 @@ export default {
         "border-gray-200",
         "hover:text-gray-900",
         "hover:bg-gray-200",
+        "cursor-pointer",
       ],
     };
 
