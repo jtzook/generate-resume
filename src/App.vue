@@ -25,8 +25,8 @@ import { provide, ref } from "vue";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-import Card from "@/components/card/Card.vue";
-import Panel from "@/components/generic/Panel.vue";
+import Card from "@/components/Card.vue";
+import Panel from "@/components/Panel.vue";
 
 library.add(faCamera);
 dom.watch();

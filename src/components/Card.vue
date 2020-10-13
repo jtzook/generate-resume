@@ -1,5 +1,5 @@
 <template>
-  <div :class="['card', cardStyling]">
+  <div :class="cardStyling">
     <NavBar @export-to-csv="exportToCSV(cardContent)" />
     <div
       ref="cardContent"
@@ -17,9 +17,9 @@ import { ref } from "vue";
 import useResume from "@/composables/useResume";
 import useResumeOptions from "@/composables/useResumeOptions";
 
-import NavBar from "@/components/navigation/NavBar.vue";
-import SingleColumnResume from "@/components/resume/SingleColumnResume.vue";
-import MultiColumnResume from "@/components/resume/MultiColumnResume.vue";
+import NavBar from "@/components/NavBar.vue";
+import SingleColumnResume from "@/components/SingleColumnResume.vue";
+import MultiColumnResume from "@/components/MultiColumnResume.vue";
 
 export default {
   components: {
@@ -39,14 +39,14 @@ export default {
       exportToCSV,
       cardContent,
       cardStyling: [
+        "card",
         "flex flex-col flex-1",
         "bg-gray-100",
         "mx-8",
-        "rounded-lg",
+        "rounded",
         "overflow-auto",
       ],
       cardContentStyling: [
-        "resume",
         "flex flex-col flex-1",
         "mx-6 md:mx-10",
         "my-6 md:my-8",
@@ -59,10 +59,6 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  max-width: 950px;
-
-  .resume {
-    border: 1px solid black;
-  }
+  max-width: 930px;
 }
 </style>
