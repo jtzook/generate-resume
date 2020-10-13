@@ -1,10 +1,6 @@
 <template>
   <div :class="cardStyling">
-    <NavBar @export-to-csv="exportToCSV(cardContent)" />
-    <div
-      ref="cardContent"
-      :class="cardContentStyling"
-    >
+    <div :class="cardContentStyling">
       <SingleColumnResume v-show="resumeOptions.resumeMode === 'classic'" />
       <MultiColumnResume v-show="resumeOptions.resumeMode !== 'classic'" />
     </div>
@@ -12,32 +8,22 @@
 </template>
 
 <script>
-import { ref } from "vue";
-
-import useResume from "@/composables/useResume";
 import useResumeOptions from "@/composables/useResumeOptions";
 
-import NavBar from "@/components/NavBar.vue";
 import SingleColumnResume from "@/components/SingleColumnResume.vue";
 import MultiColumnResume from "@/components/MultiColumnResume.vue";
 
 export default {
   components: {
-    NavBar,
     SingleColumnResume,
     MultiColumnResume,
   },
 
   setup() {
-    const { exportToCSV } = useResume();
     const { resumeOptions } = useResumeOptions();
-
-    const cardContent = ref(null);
 
     return {
       resumeOptions,
-      exportToCSV,
-      cardContent,
       cardStyling: [
         "card",
         "flex flex-col flex-1",

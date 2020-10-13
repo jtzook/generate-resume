@@ -1,14 +1,19 @@
 <template>
   <div class="page bg-gray-600 overflow-auto">
-    <div class="content-container flex pt-8">
+    <NavBar @export-to-csv="exportToCSV(cardContent)" />
+
+    <div class="content-container flex pt-12 pb-6">
       <div class="side-column">
         <Panel v-if="showPanel"></Panel>
       </div>
-      <Card class="card-flex" />
+      <ResumeCard
+        ref="cardContent"
+        class="card-flex"
+      />
       <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
     </div>
 
-    <div :class="tailwind.footer">
+    <div :class="footerStyling">
       <span class="mr-0 sm:mr-2">© 2020 - Jared Zook</span>
       <span class="mr-2 font-black hidden sm:inline">&#183;</span>
       <a
@@ -25,36 +30,41 @@ import { provide, ref } from "vue";
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
-import Card from "@/components/Card.vue";
+import useResume from "@/composables/useResume";
+
+import ResumeCard from "@/components/ResumeCard.vue";
 import Panel from "@/components/Panel.vue";
+import NavBar from "@/components/NavBar.vue";
 
 library.add(faCamera);
 dom.watch();
 
 export default {
   setup() {
-    const tailwind = {
-      footer: [
-        "my-3",
-        "justify-center items-center",
-        "flex flex-shrink-0",
-        "flex-col-reverse sm:flex-row",
-      ],
-    };
+    const { exportToCSV } = useResume();
 
     const showPanel = ref(false);
+    const cardContent = ref(null);
 
     provide("togglePanel", () => (showPanel.value = !showPanel.value));
 
     return {
       showPanel,
-      tailwind,
+      cardContent,
+      exportToCSV,
+      footerStyling: [
+        "py-2",
+        "justify-center items-center",
+        "flex flex-shrink-0",
+        "flex-col-reverse sm:flex-row",
+      ],
     };
   },
 
   components: {
-    Card,
+    ResumeCard,
     Panel,
+    NavBar,
   },
 };
 </script>
