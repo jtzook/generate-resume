@@ -28,7 +28,6 @@ export default {
         "card",
         "flex flex-col flex-1",
         "bg-gray-100",
-        "mx-8",
         "rounded",
         "overflow-auto",
         "text-center",
@@ -46,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  max-width: 930px;
+  width: 100%;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>

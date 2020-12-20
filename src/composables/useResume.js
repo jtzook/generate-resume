@@ -1,7 +1,6 @@
 import html2pdf from 'html2pdf.js'
 
 export default function useResume() {
-  // TODO: configure jsPDF ( https://github.com/MrRio/jsPDF )
   const exportToCSV = (element) => {
     const resumeClassName = 'resume-card'
     const resumeElement = element?.getElementsByClassName(resumeClassName)[0]
@@ -12,11 +11,12 @@ export default function useResume() {
       )
     }
 
+    // NOTE: configure jsPDF ( https://github.com/MrRio/jsPDF )
     const opts = {
       margin: 0,
       filename: 'resume.pdf',
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+      // html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
     }
 
     html2pdf(resumeElement, opts)
