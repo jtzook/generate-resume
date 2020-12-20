@@ -2,13 +2,15 @@
   <div class="page bg-gray-600 overflow-auto">
     <NavBar @export-to-csv="exportToCSV(contentContainer)" />
 
-    <div ref="contentContainer" class="content-container flex pt-12 pb-6">
+    <div class="content-container flex pt-12 pb-6">
       <div class="side-column">
         <Panel v-if="showPanel"></Panel>
       </div>
-      <ResumeCard
-        class="card-flex"
-      />
+      <div ref="contentContainer">
+        <ResumeCard
+          class="card-flex"
+        />
+      </div>
       <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
     </div>
 
