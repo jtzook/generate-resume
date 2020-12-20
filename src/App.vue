@@ -2,15 +2,11 @@
   <div class="page bg-gray-600 overflow-auto">
     <NavBar @export-to-csv="exportToCSV(contentContainer)" />
 
-    <div class="content-container flex pt-12 pb-6">
+    <div ref="contentContainer" class="content-container flex pt-12 pb-6">
       <div class="side-column">
         <Panel v-if="showPanel"></Panel>
       </div>
-      <div ref="contentContainer">
-        <ResumeCard
-          class="card-flex"
-        />
-      </div>
+      <ResumeCard class="resume-card" />
       <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
     </div>
 
@@ -94,7 +90,7 @@ export default {
 .content-container {
   flex: 1 0 auto;
 
-  .card-flex {
+  .resume-card {
     flex: 4.5 auto;
   }
 
