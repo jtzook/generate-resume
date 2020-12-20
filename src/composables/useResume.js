@@ -12,11 +12,10 @@ export default function useResume() {
       )
     }
 
-    var opts = {
+    const opts = {
       margin: 0,
       filename: 'resume.pdf',
-      // image: { type: "jpeg", quality: 0.98 },
-      // html2canvas: { scale: 2 },
+      html2canvas: { scale: 2 },
       jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
     }
 

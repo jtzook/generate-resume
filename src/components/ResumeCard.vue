@@ -31,6 +31,7 @@ export default {
         "mx-8",
         "rounded",
         "overflow-auto",
+        "text-center",
       ],
       cardContentStyling: [
         "flex flex-col flex-1",
