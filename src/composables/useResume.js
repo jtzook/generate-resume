@@ -3,11 +3,13 @@ import html2pdf from "html2pdf.js";
 export default function useResume() {
   // TODO: configure jsPDF ( https://github.com/MrRio/jsPDF )
   const exportToCSV = (element) => {
-    const resumeClassName = 'resume-card'
-    const resumeElement = element?.getElementsByClassName(resumeClassName)[0]
+    const resumeClassName = "resume-card";
+    const resumeElement = element?.getElementsByClassName(resumeClassName)[0];
 
     if (!resumeElement) {
-      throw Error(`[useResume] No elements found for class '${resumeClassName}'`)
+      throw Error(
+        `[useResume] No elements found for class '${resumeClassName}'`
+      );
     }
 
     var opts = {
@@ -18,7 +20,7 @@ export default function useResume() {
       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     };
 
-    const pdfObject = html2pdf(resumeElement, opts)
+    html2pdf(resumeElement, opts);
   };
 
   return {
