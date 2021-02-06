@@ -1,6 +1,6 @@
 <template>
   <div :class="tailwindClasses">
-    <span class="mr-0 sm:mr-2 text-gray-400">© 2021, Jared Zook</span>
+    <span class="mr-0 sm:mr-2">© 2021, Jared Zook</span>
     <span class="mr-2 font-black hidden sm:inline">&#183;</span>
     <a
       class="text-blue-400 hover:text-blue-800"
