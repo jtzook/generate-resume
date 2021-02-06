@@ -13,15 +13,7 @@
       <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
     </div>
 
-    <div :class="footerStyling">
-      <span class="mr-0 sm:mr-2">© 2020 - Jared Zook</span>
-      <span class="mr-2 font-black hidden sm:inline">&#183;</span>
-      <a
-        class="text-gray-400 hover:text-gray-800"
-        target="_blank"
-        href="https://github.com/jtzook/reactive-resume"
-      >See Project Repository on GitHub</a>
-    </div>
+    <Footer />
   </div>
 </template>
 
@@ -35,6 +27,7 @@
   import ResumeCard from "@/components/ResumeCard.vue";
   import Panel from "@/components/Panel.vue";
   import NavBar from "@/components/NavBar.vue";
+  import Footer from "@/components/Footer.vue";
 
   library.add(faCamera);
   dom.watch();
@@ -69,6 +62,7 @@
       ResumeCard,
       Panel,
       NavBar,
+      Footer,
     },
   };
 </script>
@@ -95,6 +89,7 @@
 
     .resume-card {
       flex: 4.5 auto;
+      max-width: 975px;
     }
 
     .side-column {
