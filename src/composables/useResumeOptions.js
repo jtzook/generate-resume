@@ -2,7 +2,7 @@ import { reactive } from 'vue';
 
 export default function useResumeOptions() {
   const resumeOptions = reactive({
-    resumeMode: 'modern',
+    resumeMode: 'classic',
   });
 
   const toggleResumeMode = () => {

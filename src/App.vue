@@ -1,10 +1,10 @@
 <template>
-  <div class="page bg-gray-600 overflow-auto">
+  <div class="page bg-gray-900 overflow-auto">
     <NavBar @export-to-csv="exportToCSV(contentContainer)" />
 
     <div
       ref="contentContainer"
-      class="content-container flex pt-12 pb-6"
+      class="content-container flex pt-6 pb-6"
     >
       <div class="side-column">
         <Panel v-if="showPanel"></Panel>
@@ -75,7 +75,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
     width: 100vw;
     height: 100vh;
   }

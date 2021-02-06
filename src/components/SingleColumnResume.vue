@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <div>First Last</div>
-    <div class="text-left">Body</div>
+  <div class="font-serif color-black">
+    <h1>First Last</h1>
   </div>
 </template>

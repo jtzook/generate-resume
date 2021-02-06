@@ -26,11 +26,9 @@
       const styling = {
         navBar: [
           "nav-bar",
-          "flex",
-          "items-center",
-          "justify-between",
-          "bg-gray-900",
+          "flex items-center justify-between",
           "p-3",
+          "bg-blue-600",
         ],
         hamburgerBun: ["flex", "flex-1", "text-left", "text-gray-200", "mr-2"],
         hamburger: [
