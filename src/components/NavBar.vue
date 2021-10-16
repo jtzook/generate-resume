@@ -10,10 +10,7 @@
       <span class="text-sm">Reactive Resume</span>
     </div>
     <div class="flex-1 flex justify-end hide-if-mobile">
-      <div
-        @click="$emit('export-to-csv')"
-        :class="['export-button', ...styling.exportButton]"
-      >Export</div>
+      <div :class="['export-button', ...styling.exportButton]">Export</div>
     </div>
   </nav>
 </template>

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import useResumeOptions from "@/composables/useResumeOptions";
+import useResume from "@/composables/useResume";
 
 import SingleColumnResume from "@/components/SingleColumnResume.vue";
 import MultiColumnResume from "@/components/MultiColumnResume.vue";
@@ -20,7 +20,7 @@ export default {
   },
 
   setup() {
-    const { resumeOptions } = useResumeOptions();
+    const { resumeOptions } = useResume();
 
     return {
       resumeOptions,

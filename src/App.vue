@@ -1,11 +1,8 @@
 <template>
   <div class="page bg-gray-900 overflow-auto">
-    <NavBar @export-to-csv="exportToCSV(contentContainer)" />
+    <NavBar />
 
-    <div
-      ref="contentContainer"
-      class="content-container flex pt-6 pb-6"
-    >
+    <div class="content-container flex pt-6 pb-6">
       <div class="side-column">
         <Panel v-if="showPanel"></Panel>
       </div>
@@ -18,11 +15,9 @@
 </template>
 
 <script>
-  import { provide, ref, onMounted } from "vue";
+  import { provide, ref } from "vue";
   import { library, dom } from "@fortawesome/fontawesome-svg-core";
   import { faCamera } from "@fortawesome/free-solid-svg-icons";
-
-  import useResume from "@/composables/useResume";
 
   import ResumeCard from "@/components/ResumeCard.vue";
   import Panel from "@/components/Panel.vue";
@@ -34,21 +29,12 @@
 
   export default {
     setup() {
-      const { exportToCSV } = useResume();
-
       const showPanel = ref(false);
-      const contentContainer = ref(null);
 
       provide("togglePanel", () => (showPanel.value = !showPanel.value));
 
-      onMounted(() => {
-        console.log("contentContainer", contentContainer.value);
-      });
-
       return {
         showPanel,
-        contentContainer,
-        exportToCSV,
         footerStyling: [
           "py-2",
           "justify-center items-center",
