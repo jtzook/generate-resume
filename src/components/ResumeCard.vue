@@ -8,10 +8,10 @@
 </template>
 
 <script lang="ts>
-import useResume from "@/composables/useResume";
+import useResume from "src/composables/useResume";
 
-import SingleColumnResume from "@/components/SingleColumnResume.vue";
-import MultiColumnResume from "@/components/MultiColumnResume.vue";
+import SingleColumnResume from "src/components/SingleColumnResume.vue";
+import MultiColumnResume from "src/components/MultiColumnResume.vue";
 
 export default {
   components: {

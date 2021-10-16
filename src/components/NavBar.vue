@@ -59,7 +59,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/scss/variables.scss";
+  @import "src/assets/scss/variables.scss";
 
   .hide-if-mobile {
     @media only screen and (max-width: $sm) {
