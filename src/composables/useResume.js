@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 
-export default function useResumeOptions() {
+export default function useResume() {
   const resumeOptions = reactive({
     resumeMode: 'classic',
   });
