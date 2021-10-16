@@ -15,7 +15,7 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts>
   import { inject } from "vue";
 
   export default {

@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts>
   import { provide, ref } from "vue";
   import { library, dom } from "@fortawesome/fontawesome-svg-core";
   import { faCamera } from "@fortawesome/free-solid-svg-icons";

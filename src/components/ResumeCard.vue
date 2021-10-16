@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts>
 import useResume from "@/composables/useResume";
 
 import SingleColumnResume from "@/components/SingleColumnResume.vue";
