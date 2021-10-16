@@ -2,8 +2,10 @@
 </script>
 
 <template>
-  <div class="page bg-gray-900 overflow-auto">
-    Page Wrapper
+  <div class="layout">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </template>
 
@@ -13,14 +15,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-.page {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100vw;
-  height: 100vh;
+.layout {
+  display: grid;
+  grid-template-columns: [sidebar-left] auto [content] 800px [sidebar-right] auto;
+  grid-template-rows: [header] 60px [body] auto [footer] 60px;
 }
 </style>
