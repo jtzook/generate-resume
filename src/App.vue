@@ -68,6 +68,8 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
   grid-column-start: page-content;
   grid-row-start: body;
   grid-row-end: footer;
+
+  margin-top: 40px;
 }
 
 .sidebar-right {
