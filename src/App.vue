@@ -1,16 +1,32 @@
 <script setup lang="ts">
+import { provide, ref } from 'vue'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
+
+import NavBar from './components/NavBar.vue'
+import Panel from './components/Panel.vue'
+import ResumeCard from './components/ResumeCard.vue'
 import Footer from './components/Footer.vue'
+
+library.add(faCamera)
+dom.watch()
+
+const showPanel = ref(false)
+
+provide('togglePanel', () => (showPanel.value = !showPanel.value));
 
 </script>
 
 <template>
   <div class="layout">
     <div class="navbar"></div>
-    <div class="sidebar-a"></div>
-    <div class="page">
-      Hello
+    <div class="sidebar-left">
+      <Panel v-if="showPanel" />
     </div>
-    <div class="sidebar-b"></div>
+    <div class="page">
+      <ResumeCard />
+    </div>
+    <div class="sidebar-right"></div>
     <Footer />
   </div>
 </template>
@@ -41,7 +57,7 @@ import Footer from './components/Footer.vue'
   background-color: rgb(48, 6, 116);
 }
 
-.sidebar-a {
+.sidebar-left {
   grid-column-end: page-content;
   grid-row-start: body;
   grid-row-end: footer;
@@ -53,7 +69,7 @@ import Footer from './components/Footer.vue'
   grid-row-end: footer;
 }
 
-.sidebar-b {
+.sidebar-right {
   grid-column-start: sidebar-right;
   grid-column-end: end;
   grid-row-start: body;
