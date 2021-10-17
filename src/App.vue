@@ -19,9 +19,10 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
 
 <template>
   <div class="layout">
+    <!-- <NavBar /> -->
     <div class="navbar"></div>
     <div class="sidebar-left">
-      <Panel v-if="showPanel" />
+      <!-- <Panel v-if="showPanel" /> -->
     </div>
     <div class="page">
       <ResumeCard />

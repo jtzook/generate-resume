@@ -1,9 +1,9 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { inject } from 'vue';
 
 const styling = {
   navBar: [
-    'nav-bar',
+    'navbar',
     'flex items-center justify-between',
     'p-3',
     'bg-blue-600',
@@ -27,43 +27,39 @@ const styling = {
     'hover:bg-gray-200',
     'cursor-pointer',
   ],
-};
+}
 
-const togglePanel = inject("togglePanel");
+const togglePanel = inject("togglePanel")
 </script>
 
 <template>
   <nav :class="styling.navBar">
-    <div
+  NAVBAR
+    <!-- <div
       :class="[...styling.hamburgerBun]"
       @click="togglePanel"
     >
       <i :class="styling.hamburger"></i>
     </div>
     <div class="flex-0 text-gray-200">
-      <span class="text-sm">Reactive Resume</span>
+      <span class="text-sm">generate-resume</span>
     </div>
     <div class="flex-1 flex justify-end hide-if-mobile">
       <div :class="['export-button', ...styling.exportButton]">Export</div>
-    </div>
+    </div> -->
   </nav>
 </template>
 
 <style lang="scss" scoped>
-  @import "src/assets/scss/variables.scss";
+@import "src/assets/scss/variables.scss";
 
-  .hide-if-mobile {
-    @media only screen and (max-width: $sm) {
-      display: none;
-    }
+.hide-if-mobile {
+  @media only screen and (max-width: $sm) {
+    display: none;
   }
-
-  .nav-bar {
-    height: 40px;
-
-    .export-button {
-      width: 60px;
-      padding: 0.1rem 0.5rem;
-    }
-  }
+}
+.export-button {
+  width: 60px;
+  padding: 0.1rem 0.5rem;
+}
 </style>
