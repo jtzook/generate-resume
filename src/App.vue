@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import Footer from './components/Footer.vue'
+
 </script>
 
 <template>
   <div class="layout">
     <div class="navbar"></div>
     <div class="sidebar-a"></div>
-    <div class="page"></div>
+    <div class="page">
+      Hello
+    </div>
     <div class="sidebar-b"></div>
-    <div class="footer"></div>
+    <Footer />
   </div>
 </template>
 
@@ -41,14 +45,12 @@
   grid-column-end: page-content;
   grid-row-start: body;
   grid-row-end: footer;
-  background-color: rgba(10, 88, 75, 0.836);
 }
 
 .page {
   grid-column-start: page-content;
   grid-row-start: body;
   grid-row-end: footer;
-  background-color: rgb(146, 97, 7);
 }
 
 .sidebar-b {
@@ -56,13 +58,11 @@
   grid-column-end: end;
   grid-row-start: body;
   grid-row-end: footer;
-  background-color: rgba(10, 88, 75, 0.836);
 }
 
 .footer {
   grid-column-start: sidebar-left;
   grid-column-end: end;
   grid-row-start: footer;
-  background-color: rgb(48, 6, 116);
 }
 </style>
