@@ -4,7 +4,6 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
 import NavBar from './components/NavBar.vue'
-import Panel from './components/Panel.vue'
 import ResumeCard from './components/ResumeCard.vue'
 import Footer from './components/Footer.vue'
 
@@ -20,7 +19,7 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
   <div class="layout">
     <NavBar />
     <div class="sidebar-left">
-      <Panel v-if="showPanel" />
+      <div v-if="showPanel">implement me</div>
     </div>
     <div class="page">
       <ResumeCard />
