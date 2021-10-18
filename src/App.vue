@@ -39,13 +39,17 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
 }
 
 .layout {
-  --header-height: 60px;
-  --footer-height: 60px;
-  --body-max-height: calc(100vh - var(--header-height) - var(--footer-height));
+  --header-footer-height: 60px;
+  --gap: 16px;
+  --body-max-height: calc(
+    100vh - (var(--header-footer-height) * 2) - (var(--gap) * 2)
+  );
 
   display: grid;
   grid-template-columns: [sidebar-left] min(300px) [page-content] minmax(350px, 800px) [sidebar-right] min(250px);
   grid-template-rows: [header] 60px [body] max(var(--body-max-height)) [footer] 60px;
+  column-gap: var(--gap);
+  row-gap: var(--gap);
 }
 
 .navbar {
@@ -65,8 +69,6 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
   grid-column-start: page-content;
   grid-row-start: body;
   grid-row-end: footer;
-
-  margin-top: 40px;
 }
 
 .sidebar-right {

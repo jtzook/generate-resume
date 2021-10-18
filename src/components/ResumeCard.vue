@@ -8,8 +8,9 @@ const { resumeOptions } = useResume();
 
 const cardStyling = [
   "card",
+  "p-6",
   "flex flex-col flex-1",
-  "bg-gray-100",
+  "bg-gray-200",
   "rounded",
   "overflow-auto",
   "text-center",
@@ -17,9 +18,10 @@ const cardStyling = [
 
 const cardContentStyling = [
   "flex flex-col flex-1",
-  "mx-6 md:mx-10",
-  "my-6 md:my-8",
+  'p-6',
+  "bg-gray-100",
   "border-solid",
+  "rounded",
 ]
 </script>
 

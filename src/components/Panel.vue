@@ -1,13 +1,16 @@
-
 <script lang="ts" setup>
-import ButtonGroup from './ButtonGroup.vue'
+import ButtonGroup from "./ButtonGroup.vue";
 
-const tailwind = ["w-full", "rounded-r-lg", "bg-gray-900"]
+const tailwind = [
+  "w-full",
+  "bg-black",
+  "transition duration-500 ease-in-out"
+];
 </script>
 
 <template>
   <div :class="['panel', ...tailwind]">
-    <ButtonGroup />
+    <!-- <ButtonGroup /> -->
   </div>
 </template>
 
@@ -15,10 +18,7 @@ const tailwind = ["w-full", "rounded-r-lg", "bg-gray-900"]
 .panel {
   display: flex;
   flex-direction: column;
-  flex: 1 0 50px;
-  min-width: 200px;
-  max-width: 300px;
   height: 250px;
-  margin-top: 4rem;
+  width: 100%;
 }
 </style>
