@@ -14,15 +14,13 @@ dom.watch()
 const showPanel = ref(false)
 
 provide('togglePanel', () => (showPanel.value = !showPanel.value));
-
 </script>
 
 <template>
   <div class="layout">
-    <!-- <NavBar /> -->
-    <div class="navbar"></div>
+    <NavBar />
     <div class="sidebar-left">
-      <!-- <Panel v-if="showPanel" /> -->
+      <Panel v-if="showPanel" />
     </div>
     <div class="page">
       <ResumeCard />
@@ -55,7 +53,6 @@ provide('togglePanel', () => (showPanel.value = !showPanel.value));
   grid-column-end: 5;
   grid-row-start: header;
   grid-row-end: body;
-  background-color: rgb(48, 6, 116);
 }
 
 .sidebar-left {

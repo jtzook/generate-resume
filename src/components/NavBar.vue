@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import { inject } from 'vue';
+import { inject } from 'vue'
+
+const togglePanel = inject("togglePanel")
 
 const styling = {
   navBar: [
     'navbar',
     'flex items-center justify-between',
-    'p-3',
+    'p-4',
     'bg-blue-600',
   ],
-  hamburgerBun: ['flex', 'flex-1', 'text-left', 'text-gray-200', 'mr-2'],
+  hamburgerBun: ['flex', 'text-gray-200', 'hover:text-blue-600 hover:bg-gray-200'],
   hamburger: [
-    'fas',
-    'fa-bars',
-    'hover:text-gray-900',
-    'hover:bg-gray-200',
+    'fas fa-bars',
     'cursor-pointer',
   ],
   exportButton: [
@@ -23,30 +22,30 @@ const styling = {
     'rounded',
     'text-gray-200',
     'border-gray-200',
-    'hover:text-gray-900',
-    'hover:bg-gray-200',
+    'hover:bg-gray-200 hover:text-gray-900',
     'cursor-pointer',
   ],
 }
-
-const togglePanel = inject("togglePanel")
 </script>
 
 <template>
   <nav :class="styling.navBar">
-  NAVBAR
-    <!-- <div
-      :class="[...styling.hamburgerBun]"
-      @click="togglePanel"
-    >
-      <i :class="styling.hamburger"></i>
+    <div class="flex-1 flex">
+      <button
+        :class="[...styling.hamburgerBun]"
+        @click="togglePanel"
+      >
+        <i :class="styling.hamburger"></i>
+      </button>
     </div>
+
     <div class="flex-0 text-gray-200">
-      <span class="text-sm">generate-resume</span>
+      <span>generate-resume</span>
     </div>
+
     <div class="flex-1 flex justify-end hide-if-mobile">
-      <div :class="['export-button', ...styling.exportButton]">Export</div>
-    </div> -->
+      <button :class="['export-button', ...styling.exportButton]">Export</button>
+    </div>
   </nav>
 </template>
 
