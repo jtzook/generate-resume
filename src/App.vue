@@ -1,90 +1,85 @@
+<script setup lang="ts">
+import { provide, ref } from 'vue'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
+
+import NavBar from './components/NavBar.vue'
+import ResumeCard from './components/ResumeCard.vue'
+import Footer from './components/Footer.vue'
+
+library.add(faCamera)
+dom.watch()
+
+const showPanel = ref(false)
+
+provide('togglePanel', () => (showPanel.value = !showPanel.value));
+</script>
+
 <template>
-  <div class="page bg-gray-900 overflow-auto">
+  <div class="layout">
     <NavBar />
-
-    <div class="content-container flex pt-6 pb-6">
-      <div class="side-column">
-        <Panel v-if="showPanel"></Panel>
-      </div>
-      <ResumeCard class="resume-card" />
-      <div :class="['side-column', {'hide-below-lg': showPanel}]"></div>
+    <div class="sidebar-left">
+      <div v-if="showPanel">implement me</div>
     </div>
-
+    <div class="page">
+      <ResumeCard />
+    </div>
+    <div class="sidebar-right"></div>
     <Footer />
   </div>
 </template>
 
-<script>
-  import { provide, ref } from "vue";
-  import { library, dom } from "@fortawesome/fontawesome-svg-core";
-  import { faCamera } from "@fortawesome/free-solid-svg-icons";
-
-  import ResumeCard from "@/components/ResumeCard.vue";
-  import Panel from "@/components/Panel.vue";
-  import NavBar from "@/components/NavBar.vue";
-  import Footer from "@/components/Footer.vue";
-
-  library.add(faCamera);
-  dom.watch();
-
-  export default {
-    setup() {
-      const showPanel = ref(false);
-
-      provide("togglePanel", () => (showPanel.value = !showPanel.value));
-
-      return {
-        showPanel,
-        footerStyling: [
-          "py-2",
-          "justify-center items-center",
-          "flex flex-shrink-0",
-          "flex-col-reverse sm:flex-row",
-        ],
-      };
-    },
-
-    components: {
-      ResumeCard,
-      Panel,
-      NavBar,
-      Footer,
-    },
-  };
-</script>
-
 <style>
-  .page {
-    display: flex;
-    flex-direction: column;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
-  }
-</style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
 
-<style lang="scss" scoped>
-  @import "@/assets/scss/variables.scss";
+.layout {
+  --header-footer-height: 60px;
+  --gap: 16px;
+  --body-max-height: calc(
+    100vh - (var(--header-footer-height) * 2) - (var(--gap) * 2)
+  );
 
-  .content-container {
-    flex: 1 0 auto;
+  display: grid;
+  grid-template-columns: [sidebar-left] min(300px) [page-content] minmax(350px, 800px) [sidebar-right] min(250px);
+  grid-template-rows: [header] 60px [body] max(var(--body-max-height)) [footer] 60px;
+  column-gap: var(--gap);
+  row-gap: var(--gap);
+}
 
-    .resume-card {
-      flex: 4.5 auto;
-      max-width: 975px;
-    }
+.navbar {
+  grid-column-start: sidebar-left;
+  grid-column-end: 5;
+  grid-row-start: header;
+  grid-row-end: body;
+}
 
-    .side-column {
-      flex: 1 5%;
+.sidebar-left {
+  grid-column-end: page-content;
+  grid-row-start: body;
+  grid-row-end: footer;
+}
 
-      &.hide-below-lg {
-        @media only screen and (max-width: $lg) {
-          display: none;
-        }
-      }
-    }
-  }
+.page {
+  grid-column-start: page-content;
+  grid-row-start: body;
+  grid-row-end: footer;
+}
+
+.sidebar-right {
+  grid-column-start: sidebar-right;
+  grid-column-end: end;
+  grid-row-start: body;
+  grid-row-end: footer;
+}
+
+.footer {
+  grid-column-start: sidebar-left;
+  grid-column-end: end;
+  grid-row-start: footer;
+}
 </style>

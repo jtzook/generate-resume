@@ -1,78 +1,64 @@
+<script setup lang="ts">
+import { inject } from 'vue'
+
+const togglePanel = inject("togglePanel")
+
+const styling = {
+  navBar: [
+    'navbar',
+    'flex items-center justify-between',
+    'p-4',
+    'bg-blue-600',
+  ],
+  hamburgerBun: ['flex', 'text-gray-200', 'hover:text-blue-600 hover:bg-gray-200'],
+  hamburger: [
+    'fas fa-bars',
+    'cursor-pointer',
+  ],
+  exportButton: [
+    'text-sm',
+    'leading-tight',
+    'border',
+    'rounded',
+    'text-gray-200',
+    'border-gray-200',
+    'hover:bg-gray-200 hover:text-gray-900',
+    'cursor-pointer',
+  ],
+}
+</script>
+
 <template>
   <nav :class="styling.navBar">
-    <div
-      :class="[...styling.hamburgerBun]"
-      @click="togglePanel"
-    >
-      <i :class="styling.hamburger"></i>
+    <div class="flex-1 flex">
+      <button
+        :class="[...styling.hamburgerBun]"
+        @click="togglePanel"
+      >
+        <i :class="styling.hamburger"></i>
+      </button>
     </div>
+
     <div class="flex-0 text-gray-200">
-      <span class="text-sm">Reactive Resume</span>
+      <span>generate-resume</span>
     </div>
+
     <div class="flex-1 flex justify-end hide-if-mobile">
-      <div :class="['export-button', ...styling.exportButton]">Export</div>
+      <button :class="['export-button', ...styling.exportButton]">Export</button>
     </div>
   </nav>
 </template>
 
-<script>
-  import { inject } from "vue";
-
-  export default {
-    setup() {
-      const styling = {
-        navBar: [
-          "nav-bar",
-          "flex items-center justify-between",
-          "p-3",
-          "bg-blue-600",
-        ],
-        hamburgerBun: ["flex", "flex-1", "text-left", "text-gray-200", "mr-2"],
-        hamburger: [
-          "fas",
-          "fa-bars",
-          "hover:text-gray-900",
-          "hover:bg-gray-200",
-          "cursor-pointer",
-        ],
-        exportButton: [
-          "text-sm",
-          "leading-tight",
-          "border",
-          "rounded",
-          "text-gray-200",
-          "border-gray-200",
-          "hover:text-gray-900",
-          "hover:bg-gray-200",
-          "cursor-pointer",
-        ],
-      };
-
-      const togglePanel = inject("togglePanel");
-
-      return {
-        styling,
-        togglePanel,
-      };
-    },
-  };
-</script>
-
 <style lang="scss" scoped>
-  @import "@/assets/scss/variables.scss";
+@import "src/assets/scss/variables.scss";
 
-  .hide-if-mobile {
-    @media only screen and (max-width: $sm) {
-      display: none;
-    }
+.hide-if-mobile {
+  @media only screen and (max-width: $sm) {
+    display: none;
   }
-
-  .nav-bar {
-    height: 40px;
-
-    .export-button {
-      width: 60px;
-      padding: 0.1rem 0.5rem;
-    }
-  }
+}
+.export-button {
+  width: 60px;
+  padding: 0.1rem 0.5rem;
+}
 </style>
